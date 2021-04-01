@@ -1,0 +1,5 @@
+D:\My Projects\InveonProject\SampleProject\Sample.Business\bin\Debug\Sample.Business.dll
+D:\My Projects\InveonProject\SampleProject\Sample.Business\bin\Debug\Sample.Business.pdb
+D:\My Projects\InveonProject\SampleProject\Sample.Business\obj\Debug\Sample.Business.csproj.CoreCompileInputs.cache
+D:\My Projects\InveonProject\SampleProject\Sample.Business\obj\Debug\Sample.Business.dll
+D:\My Projects\InveonProject\SampleProject\Sample.Business\obj\Debug\Sample.Business.pdb

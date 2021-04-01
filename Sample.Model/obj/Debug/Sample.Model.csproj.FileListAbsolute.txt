@@ -1,0 +1,6 @@
+D:\My Projects\InveonProject\SampleProject\Sample.Model\bin\Debug\Sample.Model.dll
+D:\My Projects\InveonProject\SampleProject\Sample.Model\bin\Debug\Sample.Model.pdb
+D:\My Projects\InveonProject\SampleProject\Sample.Model\obj\Debug\Sample.Model.csprojAssemblyReference.cache
+D:\My Projects\InveonProject\SampleProject\Sample.Model\obj\Debug\Sample.Model.csproj.CoreCompileInputs.cache
+D:\My Projects\InveonProject\SampleProject\Sample.Model\obj\Debug\Sample.Model.dll
+D:\My Projects\InveonProject\SampleProject\Sample.Model\obj\Debug\Sample.Model.pdb
