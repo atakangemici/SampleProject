@@ -80,3 +80,15 @@ D:\My Projects\InveonProject\SampleProject\Sample.App\obj\Debug\Sample.App.cspro
 D:\My Projects\InveonProject\SampleProject\Sample.App\obj\Debug\Sample.App.csproj.CopyComplete
 D:\My Projects\InveonProject\SampleProject\Sample.App\obj\Debug\Sample.App.dll
 D:\My Projects\InveonProject\SampleProject\Sample.App\obj\Debug\Sample.App.pdb
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Sample.Model.dll
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Sample.Model.pdb
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Sample.Model.dll.config
+D:\My Projects\InveonProject\SampleProject\Sample.App\obj\Debug\Sample.App.csprojAssemblyReference.cache
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.ServiceLocation.dll
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.Unity.Configuration.dll
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.Unity.dll
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Unity.Mvc3.dll
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.ServiceLocation.pdb
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.ServiceLocation.xml
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.Unity.xml
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.Unity.Configuration.xml

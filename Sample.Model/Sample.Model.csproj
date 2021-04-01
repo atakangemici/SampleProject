@@ -57,12 +57,14 @@
     <Compile Include="DbModel\Products.cs" />
     <Compile Include="DbModel\SampleDbContext.cs" />
     <Compile Include="DbModel\Users.cs" />
+    <Compile Include="Interfaces\IAppRepository.cs" />
     <Compile Include="Migrations\202104011009260_myMigration.cs" />
     <Compile Include="Migrations\202104011009260_myMigration.designer.cs">
       <DependentUpon>202104011009260_myMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AppRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

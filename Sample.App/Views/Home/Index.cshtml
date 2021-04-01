@@ -1,63 +1,33 @@
-﻿@{
+﻿@model IEnumerable<Sample.Model.DbModel.Products>
+
+
+@{
     ViewBag.Title = "Home Page";
 }
 
 <div class="container">
     <div class="row">
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <img src="https://aydinli-polo.akinoncdn.com/products/2020/11/19/489388/af072117-c11f-4d8a-9e8a-600cb5cc09db_size398x599_cropCenter.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <img src="https://aydinli-polo.akinoncdn.com/products/2020/11/19/489388/af072117-c11f-4d8a-9e8a-600cb5cc09db_size398x599_cropCenter.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="@item.Pictures" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Ürün Adı : @item.Name</h5>
+                        <p class="card-text">Barkod : @item.Barcode</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Fiyat : @item.Price ₺ </li>
+                        <li class="list-group-item">Açıklama : @item.Description</li>
+                        <li class="list-group-item">Miktar : @item.Quantity</li>
+                    </ul>
+                 
                 </div>
             </div>
-        </div>
-        <div class="col-sm">
-            <div class="card" style="width: 18rem;">
-                <img src="https://aydinli-polo.akinoncdn.com/products/2020/11/19/489388/af072117-c11f-4d8a-9e8a-600cb5cc09db_size398x599_cropCenter.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">An item</li>
-                    <li class="list-group-item">A second item</li>
-                    <li class="list-group-item">A third item</li>
-                </ul>
-                <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
+        }
+
+
     </div>
 </div>
 
