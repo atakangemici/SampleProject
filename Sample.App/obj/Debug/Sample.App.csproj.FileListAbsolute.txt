@@ -92,3 +92,5 @@ D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.Se
 D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.ServiceLocation.xml
 D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.Unity.xml
 D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Microsoft.Practices.Unity.Configuration.xml
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Sample.Business.dll
+D:\My Projects\InveonProject\SampleProject\Sample.App\bin\Sample.Business.pdb

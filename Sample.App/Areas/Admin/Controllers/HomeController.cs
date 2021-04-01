@@ -28,7 +28,28 @@ namespace Sample.App.Areas.Admin.Controllers
         {
             var getUser = await _appRepository.GetUser(email, password);
 
-            var hasAdminRightCheck = await AppController.IsValidAdmin(getUser);
+            if (getUser != null)
+            {
+                var hasAdminRightCheck = await AppController.IsValidAdmin(getUser);
+
+                if (hasAdminRightCheck.Status == true)
+                {
+                    Session.Add("login", getUser);
+
+                    return View("Index");
+                }
+            }
+
+            return View();
+        }
+
+        public ActionResult Index()
+        {
+            var result = (Users)Session["login"];
+
+            if (result == null)
+                return View("Login");
+
 
             return View();
         }

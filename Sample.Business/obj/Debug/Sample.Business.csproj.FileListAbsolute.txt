@@ -3,3 +3,10 @@ D:\My Projects\InveonProject\SampleProject\Sample.Business\bin\Debug\Sample.Busi
 D:\My Projects\InveonProject\SampleProject\Sample.Business\obj\Debug\Sample.Business.csproj.CoreCompileInputs.cache
 D:\My Projects\InveonProject\SampleProject\Sample.Business\obj\Debug\Sample.Business.dll
 D:\My Projects\InveonProject\SampleProject\Sample.Business\obj\Debug\Sample.Business.pdb
+D:\My Projects\InveonProject\SampleProject\Sample.Business\bin\Debug\Sample.Model.dll
+D:\My Projects\InveonProject\SampleProject\Sample.Business\bin\Debug\EntityFramework.dll
+D:\My Projects\InveonProject\SampleProject\Sample.Business\bin\Debug\Sample.Model.pdb
+D:\My Projects\InveonProject\SampleProject\Sample.Business\bin\Debug\Sample.Model.dll.config
+D:\My Projects\InveonProject\SampleProject\Sample.Business\bin\Debug\EntityFramework.xml
+D:\My Projects\InveonProject\SampleProject\Sample.Business\obj\Debug\Sample.Business.csprojAssemblyReference.cache
+D:\My Projects\InveonProject\SampleProject\Sample.Business\obj\Debug\Sample.Business.csproj.CopyComplete
