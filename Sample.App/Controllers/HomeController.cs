@@ -20,23 +20,9 @@ namespace Sample.App.Controllers
 
         public async Task<ActionResult> Index()
         {
-            var products = await _appRepository.Products();
+            var products = await _appRepository.GetProducts();
 
             return View(products);
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
         }
     }
 }

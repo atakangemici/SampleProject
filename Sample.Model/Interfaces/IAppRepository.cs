@@ -9,6 +9,8 @@ namespace Sample.Model.Interfaces
 {
     public interface IAppRepository
     {
-        Task<List<Products>> Products();
+        Task<List<Products>> GetProducts();
+        Task<Users> GetUser(string email, string password);
+
     }
 }
