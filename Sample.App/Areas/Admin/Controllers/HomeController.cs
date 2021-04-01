@@ -38,7 +38,16 @@ namespace Sample.App.Areas.Admin.Controllers
 
                     return View("Index");
                 }
+                else
+                {
+                    ViewBag.validMessage = hasAdminRightCheck.Message;
+                }
             }
+            else
+            {
+                ViewBag.validMessage = "Kullanıcı bulunamadı.";
+            }
+
 
             return View();
         }

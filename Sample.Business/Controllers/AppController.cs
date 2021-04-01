@@ -17,18 +17,15 @@ namespace Sample.Business.Controllers
             if (!User.HasAdminRights)
             {
                 adminValid.Status = false;
-                adminValid.Message = "Admin panele giriş için yetkiniz bulunmuyor.";
-
+                adminValid.Message = "Giriş için yetkiniz bulunmuyor.";
             }
             else
             {
                 adminValid.Status = true;
-                adminValid.Message = "Admin panele giriş başarılı.";
+                adminValid.Message = "Giriş başarılı.";
             }
 
             return adminValid;
-
         }
-
     }
 }
