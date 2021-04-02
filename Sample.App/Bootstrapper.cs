@@ -1,5 +1,7 @@
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
+using Sample.Business.BusinessLogic;
+using Sample.Business.Interfaces;
 using Sample.Model.Interfaces;
 using Sample.Model.Repositories;
 using Unity.Mvc3;
@@ -20,6 +22,7 @@ namespace Sample.App
             var container = new UnityContainer();
 
             container.RegisterType<IAppRepository, AppRepository>();
+            container.RegisterType<IAppBusiness, AppBusiness>();
 
             return container;
         }

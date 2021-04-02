@@ -1,4 +1,5 @@
-﻿using Sample.Business.Controllers;
+﻿using Sample.Business.BusinessLogic;
+using Sample.Business.Interfaces;
 using Sample.Model.DbModel;
 using Sample.Model.Interfaces;
 using System;
@@ -13,10 +14,13 @@ namespace Sample.App.Areas.Admin.Controllers
     public class HomeController : Controller
     {
         private readonly IAppRepository _appRepository;
+        private readonly IAppBusiness _appBusiness;
 
-        public HomeController(SampleDbContext context, IAppRepository appRepository)
+
+        public HomeController(IAppRepository appRepository, IAppBusiness appBusiness)
         {
             _appRepository = appRepository;
+            _appBusiness = appBusiness;
         }
 
         public ActionResult Login()
@@ -30,13 +34,13 @@ namespace Sample.App.Areas.Admin.Controllers
 
             if (getUser != null)
             {
-                var hasAdminRightCheck = await AppController.IsValidAdmin(getUser);
+                var hasAdminRightCheck = await _appBusiness.IsValidAdmin(getUser);
 
-                if (hasAdminRightCheck.Status == true)
+                if (hasAdminRightCheck.Status)
                 {
                     Session.Add("login", getUser);
 
-                    return View("Index");
+                    return RedirectToAction("Index");
                 }
                 else
                 {
@@ -57,7 +61,7 @@ namespace Sample.App.Areas.Admin.Controllers
             var result = (Users)Session["login"];
 
             if (result == null)
-                return View("Login");
+                return RedirectToAction("Login");
 
 
             return View();

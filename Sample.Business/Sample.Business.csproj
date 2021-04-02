@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="BusinessLogic\AppBusiness.cs" />
+    <Compile Include="Interfaces\IAppBusiness.cs" />
     <Compile Include="Models\AdminValidModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,5 +52,6 @@
       <Name>Sample.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

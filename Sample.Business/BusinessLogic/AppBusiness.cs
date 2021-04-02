@@ -1,4 +1,5 @@
 ﻿using Sample.App.Models;
+using Sample.Business.Interfaces;
 using Sample.Model.DbModel;
 using System;
 using System.Collections.Generic;
@@ -6,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sample.Business.Controllers
+namespace Sample.Business.BusinessLogic
 {
-    public class AppController
+    public class AppBusiness : IAppBusiness
     {
-        public static async Task<AdminValidModels> IsValidAdmin(Users User)
+
+        public async Task<AdminValidModels> IsValidAdmin(Users User)
         {
             AdminValidModels adminValid = new AdminValidModels();
 
@@ -28,4 +30,6 @@ namespace Sample.Business.Controllers
             return adminValid;
         }
     }
+
+
 }

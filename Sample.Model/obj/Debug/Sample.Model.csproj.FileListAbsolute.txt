@@ -11,4 +11,3 @@ D:\My Projects\InveonProject\SampleProject\Sample.Model\obj\Debug\Sample.Model.d
 D:\My Projects\InveonProject\SampleProject\Sample.Model\obj\Debug\Sample.Model.pdb
 D:\My Projects\InveonProject\SampleProject\Sample.Model\obj\Debug\Sample.Model.Migrations.myMigration.resources
 D:\My Projects\InveonProject\SampleProject\Sample.Model\obj\Debug\Sample.Model.csproj.GenerateResource.cache
-D:\My Projects\InveonProject\SampleProject\Sample.Model\obj\Debug\Sample.Model.csprojAssemblyReference.cache
