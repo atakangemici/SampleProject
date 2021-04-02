@@ -6,6 +6,6 @@ namespace Sample.Business.Interfaces
 {
     public interface IAppBusiness
     {
-        Task<AdminValidModels> IsValidAdmin(Users User);
+        Task<AdminValidModel> IsValidAdmin(Users User);
     }
 }

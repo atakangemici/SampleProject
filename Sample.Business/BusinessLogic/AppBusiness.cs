@@ -8,9 +8,9 @@ namespace Sample.Business.BusinessLogic
     public class AppBusiness : IAppBusiness
     {
 
-        public async Task<AdminValidModels> IsValidAdmin(Users User)
+        public async Task<AdminValidModel> IsValidAdmin(Users User)
         {
-            AdminValidModels adminValid = new AdminValidModels();
+            AdminValidModel adminValid = new AdminValidModel();
 
             if (!User.HasAdminRights)
             {
