@@ -6,13 +6,10 @@
 <div class="login-page">
     <div class="form">
         <form class="login-form" method="post" action="@Url.Action("Login", "Home")">
-
             <input type="text" name="email" placeholder="e-posta" />
             <input type="password" name="password" placeholder="sifre" />
             <button>Giriş Yap</button>
-
             <label style=" margin-top: 30px;"> @ViewBag.validMessage</label>
-           
         </form>
     </div>
 </div>
