@@ -1,4 +1,5 @@
 ﻿using Sample.Business.Interfaces;
+using Sample.Model.Entities;
 using Sample.Model.Interfaces;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -49,12 +50,19 @@ namespace Sample.App.Areas.Admin.Controllers
             return View();
         }
 
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
+
             if (Session["user"] == null)
                 return RedirectToAction("Login");
 
-            return View();
+            var userInfo = (Users)Session["user"];
+
+            ViewBag.adminName = userInfo.Name + " " + userInfo.SureName;
+
+            var products = await _appRepository.GetProducts();
+
+            return View(products);
         }
     }
 }
