@@ -39,7 +39,7 @@ namespace Sample.App.Areas.Admin.Controllers
 
                 if (hasAdminRightCheck.Status)
                 {
-                    Session.Add("login", getUser);
+                    Session.Add("user", getUser);
 
                     return RedirectToAction("Index");
                 }
@@ -59,11 +59,8 @@ namespace Sample.App.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            var result = (Users)Session["login"];
-
-            if (result == null)
+            if (Session["user"] == null)
                 return RedirectToAction("Login");
-
 
             return View();
         }
