@@ -6,7 +6,6 @@
 
 <div class="container">
     <div class="row">
-
         @foreach (var item in Model)
         {
             <div class="col-sm-4">
@@ -15,13 +14,12 @@
                     <div class="card-body">
                         <h5 class="card-title">Ürün Adı : @item.Name</h5>
                         <p class="card-text">Barkod : @item.Barcode</p>
+                        <p class="card-text">Fiyat : @item.Price ₺</p>
+                        <p class="card-text">Miktar : @item.Quantity</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Fiyat : @item.Price ₺ </li>
                         <li class="list-group-item">Açıklama : @item.Description</li>
-                        <li class="list-group-item">Miktar : @item.Quantity</li>
                     </ul>
-
                 </div>
             </div>
         }
