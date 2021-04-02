@@ -1,6 +1,7 @@
 ﻿using Sample.App.Models;
 using Sample.Business.Interfaces;
 using Sample.Model.Entities;
+using System;
 using System.Threading.Tasks;
 
 namespace Sample.Business.BusinessLogic
@@ -25,7 +26,13 @@ namespace Sample.Business.BusinessLogic
 
             return adminValid;
         }
+
+        public async Task<Products> ProductDataGenerate(Products Product, int userId)
+        {
+            Product.Owner = userId;
+            Product.CreatedAt = DateTime.Now;
+
+            return Product;
+        }
     }
-
-
 }

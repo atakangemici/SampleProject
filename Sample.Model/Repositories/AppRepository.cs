@@ -1,5 +1,6 @@
 ﻿using Sample.Model.Entities;
 using Sample.Model.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -22,6 +23,27 @@ namespace Sample.Model.Repositories
             var user = await dbContext.Users.Where(x => !x.Deleted && x.Email == email && x.Password == password).FirstOrDefaultAsync();
 
             return user;
+        }
+
+        public async Task<bool> AddProduct(Products product)
+        {
+
+            dbContext.Products.Add(product);
+            await dbContext.SaveChangesAsync();
+
+            return true;
+
+        }
+
+        public async Task<bool> DeleteProduct(int id)
+        {
+            var product = await dbContext.Products.Where(x => x.Id == id).FirstOrDefaultAsync();
+            product.Deleted = true;
+
+            await dbContext.SaveChangesAsync();
+
+            return true;
+
         }
     }
 }

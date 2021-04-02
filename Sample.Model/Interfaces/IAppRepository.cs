@@ -8,6 +8,7 @@ namespace Sample.Model.Interfaces
     {
         Task<List<Products>> GetProducts();
         Task<Users> GetUser(string email, string password);
-
+        Task<bool> AddProduct(Products product);
+        Task<bool> DeleteProduct(int id);
     }
 }

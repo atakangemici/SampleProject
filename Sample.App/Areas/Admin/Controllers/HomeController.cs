@@ -17,6 +17,7 @@ namespace Sample.App.Areas.Admin.Controllers
             _appBusiness = appBusiness;
         }
 
+
         public ActionResult Login()
         {
             return View();
@@ -63,6 +64,33 @@ namespace Sample.App.Areas.Admin.Controllers
             var products = await _appRepository.GetProducts();
 
             return View(products);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> AddProduct(Products product)
+        {
+            var userInfo = (Users)Session["user"];
+
+            var productData = await _appBusiness.ProductDataGenerate(product, userInfo.Id);
+            var addProduct = await _appRepository.AddProduct(productData);
+            var products = await _appRepository.GetProducts();
+
+            return RedirectToAction("Index", products);
+        }
+
+        public async Task<ActionResult> DeleteProduct(int id)
+        {
+            var deleteProduct = await _appRepository.DeleteProduct(id);
+            var products = await _appRepository.GetProducts();
+
+            return RedirectToAction("Index", products);
+        }
+
+        public async Task<ActionResult> UpdateProduct(int id)
+        {
+
+
+            return View();
         }
     }
 }

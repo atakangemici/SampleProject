@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="main-panel">
-       
+
 
             <!-- End Navbar -->
             <div class="content">
@@ -50,7 +50,7 @@
                                     <li class="list-group-item">Açıklama : @item.Description</li>
                                 </ul>
                                 <button type="button" class="btn btn-success">Güncelle</button>
-                                <button type="button" class="btn btn-danger">Sil</button>
+                                @Html.ActionLink("Sil", "DeleteProduct", new { id = item.Id }, new { @class = "btn btn-danger" })
 
                             </div>
 
@@ -67,41 +67,41 @@
                                 <h5 class="card-title" style="text-align: center;padding-bottom: 20px;">Yeni Ürün</h5>
                             </div>
                             <div class="card-body">
-                                <form>
+                                <form class="login-form" method="post" action="@Url.Action("AddProduct", "Home")">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Ürün Fotoğrafı</label>
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                                <label class="custom-file-label" for="inputGroupFile01">Ürün Fotoğrafı Ekle</label>
+                                                <input type="file" class="custom-file-input" id="productFile" name="pictures">
+                                                <label class="custom-file-label" for="productFile">Ürün Fotoğrafı Ekle</label>
                                             </div>
                                         </div>
 
-                                       
+
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3 pr-1">
                                             <div class="form-group">
                                                 <label>Ürün Adı</label>
-                                                <input type="text" class="form-control" placeholder="Ürün Adı">
+                                                <input type="text" class="form-control" placeholder="Ürün Adı" name="name">
                                             </div>
                                         </div>
                                         <div class="col-md-3 px-1">
                                             <div class="form-group">
                                                 <label>Barkod</label>
-                                                <input type="text" class="form-control" placeholder="Barkod">
+                                                <input type="text" class="form-control" placeholder="Barkod" name="barcode">
                                             </div>
                                         </div>
                                         <div class="col-md-3 pl-1">
                                             <div class="form-group">
                                                 <label>Fiyat</label>
-                                                <input type="number" class="form-control" placeholder="Fiyat">
+                                                <input type="number" class="form-control" placeholder="Fiyat" name="price">
                                             </div>
                                         </div>
                                         <div class="col-md-3 pl-1">
                                             <div class="form-group">
                                                 <label>Miktar</label>
-                                                <input type="number" class="form-control" placeholder="Miktar">
+                                                <input type="number" class="form-control" placeholder="Miktar" name="quantity">
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Açıklama</label>
-                                                <textarea class="form-control textarea"></textarea>
+                                                <textarea class="form-control textarea" name="description"></textarea>
                                             </div>
                                         </div>
                                     </div>
