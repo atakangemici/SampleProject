@@ -27,6 +27,7 @@ namespace Sample.App.Areas.Admin.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public async Task<ActionResult> Login(string email, string password)
         {
