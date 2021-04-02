@@ -1,6 +1,6 @@
 ﻿using Sample.Business.BusinessLogic;
 using Sample.Business.Interfaces;
-using Sample.Model.DbModel;
+using Sample.Model.Entities;
 using Sample.Model.Interfaces;
 using System;
 using System.Collections.Generic;

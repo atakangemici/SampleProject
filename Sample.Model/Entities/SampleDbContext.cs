@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sample.Model.DbModel
+namespace Sample.Model.Entities
 {
     public class SampleDbContext : DbContext
     {

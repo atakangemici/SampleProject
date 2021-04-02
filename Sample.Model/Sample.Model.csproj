@@ -53,14 +53,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DbModel\BaseEntity.cs" />
-    <Compile Include="DbModel\Products.cs" />
-    <Compile Include="DbModel\SampleDbContext.cs" />
-    <Compile Include="DbModel\Users.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Products.cs" />
+    <Compile Include="Entities\SampleDbContext.cs" />
+    <Compile Include="Entities\Users.cs" />
     <Compile Include="Interfaces\IAppRepository.cs" />
-    <Compile Include="Migrations\202104011009260_myMigration.cs" />
-    <Compile Include="Migrations\202104011009260_myMigration.designer.cs">
-      <DependentUpon>202104011009260_myMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202104020854286_myMigration.cs" />
+    <Compile Include="Migrations\202104020854286_myMigration.designer.cs">
+      <DependentUpon>202104020854286_myMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,8 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104011009260_myMigration.resx">
-      <DependentUpon>202104011009260_myMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104020854286_myMigration.resx">
+      <DependentUpon>202104020854286_myMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

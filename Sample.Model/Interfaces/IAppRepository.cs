@@ -1,4 +1,4 @@
-﻿using Sample.Model.DbModel;
+﻿using Sample.Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
