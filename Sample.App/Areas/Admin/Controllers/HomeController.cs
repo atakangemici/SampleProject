@@ -10,7 +10,6 @@ namespace Sample.App.Areas.Admin.Controllers
         private readonly IAppRepository _appRepository;
         private readonly IAppBusiness _appBusiness;
 
-
         public HomeController(IAppRepository appRepository, IAppBusiness appBusiness)
         {
             _appRepository = appRepository;
@@ -29,9 +28,9 @@ namespace Sample.App.Areas.Admin.Controllers
 
             if (getUser != null)
             {
-                var hasAdminRightCheck = await _appBusiness.IsValidAdmin(getUser);
+                var hasAdminRight = await _appBusiness.IsValidAdmin(getUser);
 
-                if (hasAdminRightCheck.Status)
+                if (hasAdminRight.Status)
                 {
                     Session.Add("user", getUser);
 
@@ -39,14 +38,13 @@ namespace Sample.App.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ViewBag.validMessage = hasAdminRightCheck.Message;
+                    ViewBag.validMessage = hasAdminRight.Message;
                 }
             }
             else
             {
                 ViewBag.validMessage = "Kullanıcı bulunamadı.";
             }
-
 
             return View();
         }
