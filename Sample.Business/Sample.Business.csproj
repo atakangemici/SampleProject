@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\AppBusiness.cs" />
     <Compile Include="Interfaces\IAppBusiness.cs" />
-    <Compile Include="Models\AdminValidModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

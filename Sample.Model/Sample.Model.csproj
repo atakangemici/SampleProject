@@ -63,6 +63,7 @@
       <DependentUpon>202104020854286_myMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ValidModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AppRepository.cs" />
   </ItemGroup>

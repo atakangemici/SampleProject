@@ -16,9 +16,15 @@ namespace Sample.App.Controllers
 
         public async Task<ActionResult> Index()
         {
-            var products = await _appRepository.GetProducts();
+            var getProducts = await _appRepository.GetProducts();
 
-            return View(products);
+            if (!getProducts.Status)
+            {
+                ViewBag.dangerMessage = getProducts.Message;
+
+            }
+
+            return View(getProducts.Products);
         }
     }
 }

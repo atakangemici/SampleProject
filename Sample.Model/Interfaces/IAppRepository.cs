@@ -1,4 +1,5 @@
 ﻿using Sample.Model.Entities;
+using Sample.Model.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,11 +7,11 @@ namespace Sample.Model.Interfaces
 {
     public interface IAppRepository
     {
-        Task<List<Products>> GetProducts(bool hasAdminRights = false);
-        Task<Users> GetUser(string email, string password);
-        Task<bool> AddProduct(Products product);
-        Task<bool> DeleteProduct(int id);
-        Task<Products> GetProduct(int id);
-        Task<Products> UpdateProduct(Products product);
+        Task<ValidModel> GetProducts(bool hasAdminRights = false);
+        Task<ValidModel> GetUser(string email, string password);
+        Task<ValidModel> AddProduct(Products product);
+        Task<ValidModel> DeleteProduct(int id);
+        Task<ValidModel> GetProduct(int id);
+        Task<ValidModel> UpdateProduct(Products product);
     }
 }
