@@ -35,6 +35,8 @@ namespace Sample.Business.BusinessLogic
             {
 
                 validData.Status = false;
+                validData.Message = "Admin yetki kontrolü sırasında hata alındı.";
+
                 return validData;
             }
 
@@ -52,11 +54,14 @@ namespace Sample.Business.BusinessLogic
 
                 validData.Product = Product;
                 validData.Status = true;
+
                 return validData;
             }
             catch (Exception ex)
             {
                 validData.Status = false;
+                validData.Message = "Ürün ekleme verisi hazırlanırken hata alındı.";
+
                 return validData;
             }
 
@@ -84,6 +89,8 @@ namespace Sample.Business.BusinessLogic
             catch (Exception ex)
             {
                 validData.Status = false;
+                validData.Message = "Ürün güncelleme verisi hazırlanırken hata alındı.";
+
                 return validData;
             }
         }
@@ -116,6 +123,8 @@ namespace Sample.Business.BusinessLogic
             catch (Exception ex)
             {
                 validData.Status = false;
+                validData.Message = "Ürün fotoğrafı ekleme sırasında hata alındı.";
+
                 return validData;
             }
         }

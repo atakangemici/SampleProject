@@ -95,7 +95,7 @@ namespace Sample.App.Areas.Admin.Controllers
 
             if (!productData.Status)
             {
-                TempData["dangerAlert"] = productData.Status;
+                TempData["dangerAlert"] = true;
                 TempData["alertMessage"] = productData.Message;
 
                 return RedirectToAction("Index", productData.Products);
@@ -105,7 +105,7 @@ namespace Sample.App.Areas.Admin.Controllers
 
             if (!addProduct.Status)
             {
-                TempData["dangerAlert"] = addProduct.Status;
+                TempData["dangerAlert"] = true;
                 TempData["alertMessage"] = addProduct.Message;
 
                 return RedirectToAction("Index", addProduct.Products);
@@ -116,8 +116,11 @@ namespace Sample.App.Areas.Admin.Controllers
 
             if (!getProducts.Status)
             {
-                TempData["dangerAlert"] = getProducts.Status;
+                TempData["dangerAlert"] = true;
                 TempData["alertMessage"] = getProducts.Message;
+
+                return RedirectToAction("Index", getProducts.Products);
+
             }
 
             TempData["successAlert"] = true;
@@ -130,27 +133,89 @@ namespace Sample.App.Areas.Admin.Controllers
         public async Task<ActionResult> DeleteProduct(int id)
         {
             var deleteProduct = await _appRepository.DeleteProduct(id);
+
+            if (!deleteProduct.Status)
+            {
+                TempData["dangerAlert"] = true;
+                TempData["alertMessage"] = deleteProduct.Message;
+
+                return RedirectToAction("Index", deleteProduct.Products);
+
+            }
+
             var products = await _appRepository.GetProducts();
 
-            return RedirectToAction("Index", products);
+            if (!products.Status)
+            {
+                TempData["dangerAlert"] = true;
+                TempData["alertMessage"] = products.Message;
+
+                return RedirectToAction("Index", products.Products);
+
+            }
+
+            TempData["successAlert"] = true;
+            TempData["alertMessage"] = "Ürün silme işlemi başarılı.";
+
+            return RedirectToAction("Index", products.Products);
         }
 
         public async Task<ActionResult> UpdateProduct(int id)
         {
-            var userInfo = (Users)Session["user"];
-            ViewBag.adminName = userInfo.Name + " " + userInfo.SureName;
+            if (Session["user"] != null)
+            {
+                var userInfo = (Users)Session["user"];
+                ViewBag.adminName = userInfo.Name + " " + userInfo.SureName;
+            }
 
-            var product = await _appRepository.GetProduct(id);
+            var getProduct = await _appRepository.GetProduct(id);
 
-            return View(product);
+            if (!getProduct.Status)
+            {
+                TempData["dangerAlert"] = true;
+                TempData["alertMessage"] = getProduct.Message;
+            }
+
+            return View(getProduct.Product);
         }
 
         [HttpPost]
         public async Task<ActionResult> UpdateProduct(Products product, int id)
         {
             var getProduct = await _appRepository.GetProduct(id);
+
+            if (!getProduct.Status)
+            {
+                TempData["dangerAlert"] = true;
+                TempData["alertMessage"] = getProduct.Message;
+
+                return RedirectToAction("Index");
+            }
+
             var productGenarate = await _appBusiness.UpdateProductDataGenerate(getProduct.Product, product);
+
+
+            if (!productGenarate.Status)
+            {
+                TempData["dangerAlert"] = true;
+                TempData["alertMessage"] = productGenarate.Message;
+
+                return RedirectToAction("Index");
+            }
+
             var updateProduct = await _appRepository.UpdateProduct(productGenarate.Product);
+
+            if (!updateProduct.Status)
+            {
+                TempData["dangerAlert"] = true;
+                TempData["alertMessage"] = updateProduct.Message;
+
+                return RedirectToAction("Index");
+
+            }
+
+            TempData["successAlert"] = true;
+            TempData["alertMessage"] = "Ürün güncelleme işlemi başarılı.";
 
             return RedirectToAction("Index");
         }

@@ -2,7 +2,6 @@
 using Sample.Model.Interfaces;
 using Sample.Model.Models;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
@@ -53,6 +52,7 @@ namespace Sample.Model.Repositories
             catch (Exception ex)
             {
                 validData.Status = false;
+                validData.Message = "Kullanıcı getirme işleminde hata alındı.";
 
                 return validData;
             }
@@ -76,6 +76,7 @@ namespace Sample.Model.Repositories
             {
 
                 validData.Status = false;
+                validData.Message = "Ürünlerin eklenmesi işleminde hata alındı.";
 
                 return validData;
             }
@@ -100,6 +101,7 @@ namespace Sample.Model.Repositories
             catch (Exception ex)
             {
                 validData.Status = false;
+                validData.Message = "Ürünlerin silinmesi işleminde hata alındı.";
 
                 return validData;
             }
@@ -124,6 +126,7 @@ namespace Sample.Model.Repositories
             {
 
                 validData.Status = false;
+                validData.Message = "Ürün getirme işleminde hata alındı.";
 
                 return validData;
             }
@@ -146,6 +149,7 @@ namespace Sample.Model.Repositories
             catch (Exception ex)
             {
                 validData.Status = false;
+                validData.Message = "Ürün güncelleme işleminde hata alındı.";
 
                 return validData;
             }

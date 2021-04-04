@@ -20,8 +20,8 @@ namespace Sample.App.Controllers
 
             if (!getProducts.Status)
             {
+                ViewBag.dangerAlert = true;
                 ViewBag.dangerMessage = getProducts.Message;
-
             }
 
             return View(getProducts.Products);

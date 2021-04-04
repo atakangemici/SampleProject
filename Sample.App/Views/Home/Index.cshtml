@@ -4,6 +4,14 @@
     ViewBag.Title = "Home Page";
 }
 
+@if (ViewBag.dangerAlert == true)
+{
+    <div class="alert alert-danger alert-dismissible">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>@ViewBag.alertMessage</strong>
+    </div>
+}
+
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
