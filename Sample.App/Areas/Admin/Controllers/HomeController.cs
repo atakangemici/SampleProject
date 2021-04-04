@@ -28,7 +28,7 @@ namespace Sample.App.Areas.Admin.Controllers
         {
             var getUser = await _appRepository.GetUser(email, password);
 
-            if (getUser != null)
+            if (getUser.User != null)
             {
                 var hasAdminRight = await _appBusiness.IsValidAdmin(getUser.User);
 
