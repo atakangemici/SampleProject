@@ -8,10 +8,17 @@
 <div class="login-page">
     <div class="form">
         <form class="login-form" method="post" action="@Url.Action("Login", "Home")">
+            <div style="padding-bottom: 30px; font-weight: bold;">
+                <label>Admin Panel Giriş</label>
+            </div>
             <input type="text" name="email" placeholder="e-posta" />
             <input type="password" name="password" placeholder="sifre" />
             <button>Giriş Yap</button>
-            <label style=" margin-top: 30px;"> @ViewBag.validMessage</label>
+
+            <div style="padding-top: 30px; font-weight: bold;">
+                <label style=" margin-top: 30px;"> @ViewBag.validMessage</label>
+
+            </div>
         </form>
     </div>
 </div>

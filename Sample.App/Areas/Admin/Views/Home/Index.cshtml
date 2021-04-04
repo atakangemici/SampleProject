@@ -70,7 +70,7 @@
     <div class="col-sm-6">
         @foreach (var item in Model)
         {
-            <div class="col-sm-3" style="    margin-right: 60px;">
+            <div class="col-sm-3" style="margin-right: 60px;">
                 <div class="card" style="width: 18rem;">
                     <img src="~/assets/images/@item.Pictures" class="card-img-top" alt="">
                     <div class="card-body">
@@ -78,9 +78,20 @@
                         <p class="card-text">Barkod : @item.Barcode</p>
                         <p class="card-text">Fiyat : @item.Price ₺</p>
                         <p class="card-text">Miktar : @item.Quantity</p>
+                        <p class="card-text">Açıklama : @item.Description</p>
+
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Açıklama : @item.Description</li>
+
+                        @if (item.Deleted == true)
+                        {
+                            <li class="list-group-item">Pasif : Evet</li>
+                        }
+                        else
+                        {
+                            <li class="list-group-item">Pasif : Hayır</li>
+                        }
+
                     </ul>
                     @Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.Id }, new { @class = "btn btn-success" })
                     @Html.ActionLink("Sil", "DeleteProduct", new { id = item.Id }, new { @class = "btn btn-danger" })
@@ -90,7 +101,4 @@
             </div>
         }
     </div>
-
-
-
 </div>
