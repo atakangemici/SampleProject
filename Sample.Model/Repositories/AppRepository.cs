@@ -43,8 +43,7 @@ namespace Sample.Model.Repositories
 
         public async Task<bool> DeleteProduct(int id)
         {
-            var product = await dbContext.Products.Where(x => x.Id == id).FirstOrDefaultAsync();
-            product.Deleted = true;
+            dbContext.Products.Remove(dbContext.Products.Find(id));
 
             await dbContext.SaveChangesAsync();
 

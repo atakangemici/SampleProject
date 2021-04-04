@@ -5,30 +5,8 @@
 }
 
 <div class="col-sm-12">
-    @foreach (var item in Model)
-    {
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img src="~/assets/images/@item.Pictures" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">Ürün Adı : @item.Name</h5>
-                    <p class="card-text">Barkod : @item.Barcode</p>
-                    <p class="card-text">Fiyat : @item.Price ₺</p>
-                    <p class="card-text">Miktar : @item.Quantity</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Açıklama : @item.Description</li>
-                </ul>
-                @Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.Id }, new { @class = "btn btn-success" })
-                @Html.ActionLink("Sil", "DeleteProduct", new { id = item.Id }, new { @class = "btn btn-danger" })
 
-            </div>
-
-        </div>
-    }
-</div>
-<div class="row" style="padding-top: 50px;">
-    <div class="col-md-12">
+    <div class="col-sm-6">
         <div class="card card-user">
             <div class="card-header">
                 <h5 class="card-title" style="text-align: center;padding-bottom: 20px;">Yeni Ürün</h5>
@@ -88,4 +66,31 @@
             </div>
         </div>
     </div>
+
+    <div class="col-sm-6">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-3" style="    margin-right: 60px;">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/assets/images/@item.Pictures" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Ürün Adı : @item.Name</h5>
+                        <p class="card-text">Barkod : @item.Barcode</p>
+                        <p class="card-text">Fiyat : @item.Price ₺</p>
+                        <p class="card-text">Miktar : @item.Quantity</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Açıklama : @item.Description</li>
+                    </ul>
+                    @Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.Id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Sil", "DeleteProduct", new { id = item.Id }, new { @class = "btn btn-danger" })
+
+                </div>
+
+            </div>
+        }
+    </div>
+
+
+
 </div>

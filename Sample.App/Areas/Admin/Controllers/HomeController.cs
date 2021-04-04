@@ -60,7 +60,6 @@ namespace Sample.App.Areas.Admin.Controllers
                 return RedirectToAction("Login");
 
             var userInfo = (Users)Session["user"];
-
             ViewBag.adminName = userInfo.Name + " " + userInfo.SureName;
 
             var products = await _appRepository.GetProducts(true);
@@ -99,6 +98,9 @@ namespace Sample.App.Areas.Admin.Controllers
 
         public async Task<ActionResult> UpdateProduct(int id)
         {
+            var userInfo = (Users)Session["user"];
+            ViewBag.adminName = userInfo.Name + " " + userInfo.SureName;
+
             var product = await _appRepository.GetProduct(id);
 
             return View(product);
