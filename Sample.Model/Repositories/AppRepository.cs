@@ -11,9 +11,15 @@ namespace Sample.Model.Repositories
     public class AppRepository : IAppRepository
     {
         SampleDbContext dbContext = new SampleDbContext();
-        public async Task<List<Products>> GetProducts()
+        public async Task<List<Products>> GetProducts(bool hasAdminRights = false)
         {
-            var products = await dbContext.Products.Where(x => !x.Deleted).ToListAsync();
+            List<Products> products;
+
+            if (hasAdminRights)
+                products = await dbContext.Products.ToListAsync();
+            else
+                products = await dbContext.Products.Where(x => !x.Deleted).ToListAsync();
+
 
             return products;
         }

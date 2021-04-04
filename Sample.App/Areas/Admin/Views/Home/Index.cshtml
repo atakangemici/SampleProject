@@ -9,7 +9,7 @@
     {
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
-                <img src="@item.Pictures" class="card-img-top" alt="...">
+                <img src="~/assets/images/@item.Pictures" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title">Ürün Adı : @item.Name</h5>
                     <p class="card-text">Barkod : @item.Barcode</p>
@@ -27,27 +27,23 @@
         </div>
     }
 </div>
-
-
 <div class="row" style="padding-top: 50px;">
-
     <div class="col-md-12">
         <div class="card card-user">
             <div class="card-header">
                 <h5 class="card-title" style="text-align: center;padding-bottom: 20px;">Yeni Ürün</h5>
             </div>
             <div class="card-body">
-                <form class="login-form" method="post" action="@Url.Action("AddProduct", "Home")">
+                @using (Html.BeginForm("AddProduct", "Home", FormMethod.Post, new { @class = "login-form", enctype = "multipart/form-data" }))
+                {
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Ürün Fotoğrafı</label>
-                                <input type="file" class="custom-file-input" id="productFile" name="pictures">
+                                <input type="file" class="custom-file-input" id="productFile" name="file">
                                 <label class="custom-file-label" for="productFile">Ürün Fotoğrafı Ekle</label>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="row">
                         <div class="col-md-3 pr-1">
@@ -88,7 +84,7 @@
                             <button type="submit" class="btn btn-primary btn-round">Ekle</button>
                         </div>
                     </div>
-                </form>
+                }
             </div>
         </div>
     </div>

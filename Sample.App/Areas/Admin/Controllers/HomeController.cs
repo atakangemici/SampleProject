@@ -1,7 +1,9 @@
 ﻿using Sample.Business.Interfaces;
 using Sample.Model.Entities;
 using Sample.Model.Interfaces;
+using System;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Sample.App.Areas.Admin.Controllers
@@ -61,18 +63,27 @@ namespace Sample.App.Areas.Admin.Controllers
 
             ViewBag.adminName = userInfo.Name + " " + userInfo.SureName;
 
-            var products = await _appRepository.GetProducts();
+            var products = await _appRepository.GetProducts(true);
 
             return View(products);
         }
 
         [HttpPost]
-        public async Task<ActionResult> AddProduct(Products product)
+        public async Task<ActionResult> AddProduct(Products product, HttpPostedFileBase file)
         {
-            var userInfo = (Users)Session["user"];
 
-            var productData = await _appBusiness.CreateProductDataGenerate(product, userInfo.Id);
-            var addProduct = await _appRepository.AddProduct(productData);
+            var userInfo = (Users)Session["user"];
+            var imageName = "";
+
+            if (Request.Files.Count > 0)
+            {
+                imageName = await _appBusiness.UploadImages(Request.Files[0]);
+            }
+
+            var productData = await _appBusiness.CreateProductDataGenerate(product, userInfo.Id, imageName);
+
+            bool addProduct = await _appRepository.AddProduct(productData);
+
             var products = await _appRepository.GetProducts();
 
             return RedirectToAction("Index", products);

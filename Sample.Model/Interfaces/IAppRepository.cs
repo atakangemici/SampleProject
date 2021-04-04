@@ -6,7 +6,7 @@ namespace Sample.Model.Interfaces
 {
     public interface IAppRepository
     {
-        Task<List<Products>> GetProducts();
+        Task<List<Products>> GetProducts(bool hasAdminRights = false);
         Task<Users> GetUser(string email, string password);
         Task<bool> AddProduct(Products product);
         Task<bool> DeleteProduct(int id);
