@@ -71,7 +71,7 @@ namespace Sample.App.Areas.Admin.Controllers
         {
             var userInfo = (Users)Session["user"];
 
-            var productData = await _appBusiness.ProductDataGenerate(product, userInfo.Id);
+            var productData = await _appBusiness.CreateProductDataGenerate(product, userInfo.Id);
             var addProduct = await _appRepository.AddProduct(productData);
             var products = await _appRepository.GetProducts();
 
@@ -88,9 +88,19 @@ namespace Sample.App.Areas.Admin.Controllers
 
         public async Task<ActionResult> UpdateProduct(int id)
         {
+            var product = await _appRepository.GetProduct(id);
 
+            return View(product);
+        }
 
-            return View();
+        [HttpPost]
+        public async Task<ActionResult> UpdateProduct(Products product, int id)
+        {
+            var getProduct = await _appRepository.GetProduct(id);
+            var productGenarate = await _appBusiness.UpdateProductDataGenerate(getProduct, product);
+            var updateProduct = await _appRepository.UpdateProduct(productGenarate);
+
+            return RedirectToAction("Index");
         }
     }
 }

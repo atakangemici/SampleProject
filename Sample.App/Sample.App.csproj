@@ -241,6 +241,7 @@
     <Content Include="assets\scss\paper-dashboard\_tables.scss" />
     <Content Include="assets\scss\paper-dashboard\_typography.scss" />
     <Content Include="assets\scss\paper-dashboard\_variables.scss" />
+    <Content Include="Areas\Admin\Views\Home\UpdateProduct.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

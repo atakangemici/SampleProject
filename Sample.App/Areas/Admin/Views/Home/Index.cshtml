@@ -4,127 +4,92 @@
     ViewBag.Title = "Index";
 }
 
-<body>
-    <div class="wrapper ">
-        <div class="sidebar" data-color="white" data-active-color="danger">
-            <div class="logo">
-                <a href="#" class="simple-text logo-mini">
-
-                </a>
-                <a href="#" class="simple-text logo-normal">
-                    Hoşgeldin | @ViewBag.adminName
-
-                </a>
-            </div>
-            <div class="sidebar-wrapper" style="overflow: hidden;">
-                <ul class="nav">
-
-                    <li class="active ">
-                        <a href="#">
-                            <i class=" nc-icon nc-bank"></i>
-                            <p>Ürünler</p>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-        <div class="main-panel">
-
-
-            <!-- End Navbar -->
-            <div class="content">
-                <div class="col-sm-12">
-                    @foreach (var item in Model)
-                    {
-                        <div class="col-sm-3">
-                            <div class="card" style="width: 18rem;">
-                                <img src="@item.Pictures" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Ürün Adı : @item.Name</h5>
-                                    <p class="card-text">Barkod : @item.Barcode</p>
-                                    <p class="card-text">Fiyat : @item.Price ₺</p>
-                                    <p class="card-text">Miktar : @item.Quantity</p>
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">Açıklama : @item.Description</li>
-                                </ul>
-                                <button type="button" class="btn btn-success">Güncelle</button>
-                                @Html.ActionLink("Sil", "DeleteProduct", new { id = item.Id }, new { @class = "btn btn-danger" })
-
-                            </div>
-
-                        </div>
-                    }
+<div class="col-sm-12">
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-3">
+            <div class="card" style="width: 18rem;">
+                <img src="@item.Pictures" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Ürün Adı : @item.Name</h5>
+                    <p class="card-text">Barkod : @item.Barcode</p>
+                    <p class="card-text">Fiyat : @item.Price ₺</p>
+                    <p class="card-text">Miktar : @item.Quantity</p>
                 </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Açıklama : @item.Description</li>
+                </ul>
+                @Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.Id }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Sil", "DeleteProduct", new { id = item.Id }, new { @class = "btn btn-danger" })
+
+            </div>
+
+        </div>
+    }
+</div>
 
 
-                <div class="row" style="padding-top: 50px;">
+<div class="row" style="padding-top: 50px;">
 
-                    <div class="col-md-12">
-                        <div class="card card-user">
-                            <div class="card-header">
-                                <h5 class="card-title" style="text-align: center;padding-bottom: 20px;">Yeni Ürün</h5>
+    <div class="col-md-12">
+        <div class="card card-user">
+            <div class="card-header">
+                <h5 class="card-title" style="text-align: center;padding-bottom: 20px;">Yeni Ürün</h5>
+            </div>
+            <div class="card-body">
+                <form class="login-form" method="post" action="@Url.Action("AddProduct", "Home")">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Ürün Fotoğrafı</label>
+                                <input type="file" class="custom-file-input" id="productFile" name="pictures">
+                                <label class="custom-file-label" for="productFile">Ürün Fotoğrafı Ekle</label>
                             </div>
-                            <div class="card-body">
-                                <form class="login-form" method="post" action="@Url.Action("AddProduct", "Home")">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Ürün Fotoğrafı</label>
-                                                <input type="file" class="custom-file-input" id="productFile" name="pictures">
-                                                <label class="custom-file-label" for="productFile">Ürün Fotoğrafı Ekle</label>
-                                            </div>
-                                        </div>
+                        </div>
 
 
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3 pr-1">
-                                            <div class="form-group">
-                                                <label>Ürün Adı</label>
-                                                <input type="text" class="form-control" placeholder="Ürün Adı" name="name">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 px-1">
-                                            <div class="form-group">
-                                                <label>Barkod</label>
-                                                <input type="text" class="form-control" placeholder="Barkod" name="barcode">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 pl-1">
-                                            <div class="form-group">
-                                                <label>Fiyat</label>
-                                                <input type="number" class="form-control" placeholder="Fiyat" name="price">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 pl-1">
-                                            <div class="form-group">
-                                                <label>Miktar</label>
-                                                <input type="number" class="form-control" placeholder="Miktar" name="quantity">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Açıklama</label>
-                                                <textarea class="form-control textarea" name="description"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="update ml-auto mr-auto">
-                                            <button type="submit" class="btn btn-primary btn-round">Ekle</button>
-                                        </div>
-                                    </div>
-                                </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 pr-1">
+                            <div class="form-group">
+                                <label>Ürün Adı</label>
+                                <input type="text" class="form-control" placeholder="Ürün Adı" name="name">
+                            </div>
+                        </div>
+                        <div class="col-md-3 px-1">
+                            <div class="form-group">
+                                <label>Barkod</label>
+                                <input type="text" class="form-control" placeholder="Barkod" name="barcode">
+                            </div>
+                        </div>
+                        <div class="col-md-3 pl-1">
+                            <div class="form-group">
+                                <label>Fiyat</label>
+                                <input type="number" class="form-control" placeholder="Fiyat" name="price">
+                            </div>
+                        </div>
+                        <div class="col-md-3 pl-1">
+                            <div class="form-group">
+                                <label>Miktar</label>
+                                <input type="number" class="form-control" placeholder="Miktar" name="quantity">
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Açıklama</label>
+                                <textarea class="form-control textarea" name="description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="update ml-auto mr-auto">
+                            <button type="submit" class="btn btn-primary btn-round">Ekle</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-
         </div>
     </div>
-
+</div>

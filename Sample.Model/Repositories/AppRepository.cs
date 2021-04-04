@@ -45,5 +45,21 @@ namespace Sample.Model.Repositories
             return true;
 
         }
+
+        public async Task<Products> GetProduct(int id)
+        {
+            var product = await dbContext.Products.Where(x => x.Id == id).FirstOrDefaultAsync();
+
+            return product;
+
+        }
+
+        public async Task<Products> UpdateProduct(Products product)
+        {
+            await dbContext.SaveChangesAsync();
+
+            return product;
+
+        }
     }
 }

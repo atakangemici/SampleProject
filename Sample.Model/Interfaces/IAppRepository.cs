@@ -10,5 +10,7 @@ namespace Sample.Model.Interfaces
         Task<Users> GetUser(string email, string password);
         Task<bool> AddProduct(Products product);
         Task<bool> DeleteProduct(int id);
+        Task<Products> GetProduct(int id);
+        Task<Products> UpdateProduct(Products product);
     }
 }

@@ -27,10 +27,22 @@ namespace Sample.Business.BusinessLogic
             return adminValid;
         }
 
-        public async Task<Products> ProductDataGenerate(Products Product, int userId)
+        public async Task<Products> CreateProductDataGenerate(Products Product, int userId)
         {
             Product.Owner = userId;
             Product.CreatedAt = DateTime.Now;
+
+            return Product;
+        }
+
+        public async Task<Products> UpdateProductDataGenerate(Products Product, Products currentProduct)
+        {
+            Product.Name = currentProduct.Name;
+            Product.Barcode = currentProduct.Barcode;
+            Product.Price = currentProduct.Price;
+            Product.Quantity = currentProduct.Quantity;
+            Product.Description = currentProduct.Description;
+            Product.Deleted = currentProduct.Deleted;
 
             return Product;
         }

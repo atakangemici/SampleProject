@@ -7,6 +7,7 @@ namespace Sample.Business.Interfaces
     public interface IAppBusiness
     {
         Task<AdminValidModel> IsValidAdmin(Users User);
-        Task<Products> ProductDataGenerate(Products Productt, int userId);
+        Task<Products> CreateProductDataGenerate(Products Product, int userId);
+        Task<Products> UpdateProductDataGenerate(Products Product, Products currentProduct);
     }
 }
