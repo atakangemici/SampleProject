@@ -82,7 +82,6 @@
             </div>
         </div>
     </div>
-
     <div class="col-sm-6">
         @foreach (var item in Model)
         {
@@ -111,9 +110,7 @@
                     </ul>
                     @Html.ActionLink("Güncelle", "UpdateProduct", new { id = item.Id }, new { @class = "btn btn-success" })
                     @Html.ActionLink("Sil", "DeleteProduct", new { id = item.Id }, new { @class = "btn btn-danger" })
-
                 </div>
-
             </div>
         }
     </div>

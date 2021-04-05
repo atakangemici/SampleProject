@@ -23,6 +23,7 @@ namespace Sample.Model.Repositories
                     validData.Products = await dbContext.Products.Where(x => !x.Deleted).ToListAsync();
 
                 validData.Status = true;
+
                 return validData;
             }
             catch (Exception ex)
@@ -32,7 +33,6 @@ namespace Sample.Model.Repositories
 
                 return validData;
             }
-
         }
 
         public async Task<ValidModel> GetUser(string email, string password)
@@ -56,7 +56,6 @@ namespace Sample.Model.Repositories
 
                 return validData;
             }
-
         }
 
         public async Task<ValidModel> AddProduct(Products product)
@@ -74,13 +73,11 @@ namespace Sample.Model.Repositories
             }
             catch (Exception ex)
             {
-
                 validData.Status = false;
                 validData.Message = "Ürünlerin eklenmesi işleminde hata alındı.";
 
                 return validData;
             }
-
         }
 
         public async Task<ValidModel> DeleteProduct(int id)
@@ -105,7 +102,6 @@ namespace Sample.Model.Repositories
 
                 return validData;
             }
-
         }
 
         public async Task<ValidModel> GetProduct(int id)
@@ -130,7 +126,6 @@ namespace Sample.Model.Repositories
 
                 return validData;
             }
-
         }
 
         public async Task<ValidModel> UpdateProduct(Products product)
@@ -153,7 +148,6 @@ namespace Sample.Model.Repositories
 
                 return validData;
             }
-
         }
     }
 }

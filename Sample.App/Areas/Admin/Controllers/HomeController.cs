@@ -126,7 +126,6 @@ namespace Sample.App.Areas.Admin.Controllers
             TempData["successAlert"] = true;
             TempData["alertMessage"] = "Ürün ekleme işlemi başarılı.";
 
-
             return RedirectToAction("Index", getProducts.Products);
         }
 
@@ -162,11 +161,11 @@ namespace Sample.App.Areas.Admin.Controllers
 
         public async Task<ActionResult> UpdateProduct(int id)
         {
-            if (Session["user"] != null)
-            {
-                var userInfo = (Users)Session["user"];
-                ViewBag.adminName = userInfo.Name + " " + userInfo.SureName;
-            }
+            if (Session["user"] == null)
+                return RedirectToAction("Login");
+
+            var userInfo = (Users)Session["user"];
+            ViewBag.adminName = userInfo.Name + " " + userInfo.SureName;
 
             var getProduct = await _appRepository.GetProduct(id);
 

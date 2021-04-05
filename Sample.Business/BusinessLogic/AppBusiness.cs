@@ -5,7 +5,6 @@ using System;
 using System.Threading.Tasks;
 using System.Web;
 
-
 namespace Sample.Business.BusinessLogic
 {
     public class AppBusiness : IAppBusiness
